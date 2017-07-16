@@ -13,7 +13,7 @@ gem 'pg'
 
 gem 'rails_12factor', group: :production
 
-gem 'materialize-sass' #Materialize
+#gem 'materialize-sass' #Materialize
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
