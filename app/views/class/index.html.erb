@@ -1,0 +1,86 @@
+<body class="blue-grey darken-4">
+<nav>
+	<div class="nav-wrapper blue darken-1 full-width">
+		<span class="brand-logo center">Libro de visitas</span>
+	</div>
+</nav>
+<br>
+<div class="divider"></div>
+<br>
+<center>
+	<%= link_to 'Registrar mi visita', class_nuevo_path, class: "btn blue darken-4", style: "color:white" %>
+</center>
+<br>
+<div class="divider"></div>
+<br>
+<div class="container">
+	<div class="row">
+		<% @usuarios.each do |u| %>
+		<div class="col s4">
+			<div class="card">
+				<div class="card-image">
+					<% if(u.edad < 21) %>
+						<% if(u.sexo == "Hombre") %>
+							<%= image_tag("bb.png", height: '150', width: '120', class: "")%>
+						<% end %>
+						<% if(u.sexo == "Mujer") %>
+							<%= image_tag("bb1.png", height: '150', width: '120', class: "")%>
+						<% end %>
+					<% end %>
+					<% if(u.edad < 26 and u.edad > 20) %>
+						<% if(u.sexo == "Hombre") %>
+							<%= image_tag("joven.png", height: '150', width: '120', class: "")%>
+						<% end %>
+						<% if(u.sexo == "Mujer") %>
+							<%= image_tag("joven1.png", height: '150', width: '120', class: "")%>
+						<% end %>
+					<% end %>
+					<% if(u.edad > 25) %>
+						<% if(u.sexo == "Hombre") %>
+							<%= image_tag("abuelo.png", height: '150', width: '120', class: "")%>
+						<% end %>
+						<% if(u.sexo == "Mujer") %>
+							<%= image_tag("abuela.png", height: '150', width: '120', class: "")%>
+						<% end %>
+					<% end %>
+				</div>
+				<div class="card-content">
+					<span class="card-title"><%= u.nombre %></span>
+					<p><b>Nombre completo:</b></p>
+					<p><%= u.nombre %> <%= u.ap %></p>
+					<p><b>Edad:</b></p>
+					<p><%= u.edad %></p>
+					<p>Sexo: <%= u.sexo %></p>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+<footer class="page-footer blue darken-1">
+	<div class="container">
+		<div class="row">
+			<div class="col s12 center">
+				<h5 class="white-text">Creditos de la página</h5>
+				<p class="grey-text text-lighten-4">Trabajo hecho en Ruby on Rails con aplicacion SaaS Heroku por:</p>
+				<div class="chip">
+					<%= image_tag("juan.jpg")%>
+					Juan Carlos Hernández Sarmiento
+				</div>
+				<div class="chip">
+					<%= image_tag("elia.jpg")%>
+					Elia Pluma Mixcoatl
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			<center>© 2017 Universidad Politécnica de Tlaxcala</center>
+		</div>
+	</div>
+</footer>
+
+
+</body>
